@@ -4,89 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Día del Amor y La Amistad</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="/sources/imagen2.svg">
+    <title>Aviso Previo</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="icon" href="./src/assets/images/icon.svg">
 </head>
 
 <body>
-    <div class="aviso" id="aviso">
-        <p>Esto es un presente para alguien especial. Por favor, toca dos veces en el botón de la
-            esquina inferior derecha y omite este aviso. Asegurate de subir el volumen. Luego, comienza a leer.
-        </p>
-        <button id="cerrar-aviso">Salir</button>
-    </div>
 
-    <div class="carta" id="carta" style="display: none;">
-        <h1>Feliz Día del Amor y La Amistad</h1>
-        <p>
-            Una de las verdades de la vida es que ni la fama ni la riqueza se pueden comparar con la felicidad de tener
-            un amigo. Hoy, 14 de febrero, se celebra el día del amor y la amistad. Es curioso ya que las personas
-            únicamente asociamos amor con el romance, pero yo siento que el amor trata más allá del romance.
-        </p>
-        <p>
-            Es cierto que cada individuo se ve atraído a otro y eso conforma un tipo de amor. Claramente ese amor, como
-            cualquier otro, es único e inigualable. En mi caso, yo nunca he tenido una pareja ni he podido experimentar
-            lo que significa ese amor y ocasionalmente me ponía triste pensar que nunca lo haría. Pero eso ya no me da
-            tristeza porque mi enfoque cambió gracias a las palabras de una persona.
-        </p>
-        <p>
-            El hecho de no vivir la dulzura del romance no significa que renunciaré al amor. Mi mundo ahora se describe
-            por un camino muy optimista y hermoso, lleno de amor en todas sus formas. Ese camino implica muchas cosas:
-            esfuerzos, alegrías y logros, pero también decepciones y fracasos. Pero, aun así, lo iré recorriendo con
-            mucho entusiasmo y con la mejor compañía que podría tener.
-        </p>
-        <p>
-            Si lo analizamos, ese camino ya está lleno de amor. Amor de mi familia, de mis padres, de mis hermanos, de
-            mis amigos, de las personas que conozco a diario, de mi profesión e incluso de mis pasiones, como la
-            informática y la ciencia. Y, claro, también de ti. No importará si experimento el romance o no, porque estoy
-            construyendo algo mucho más valioso: un amor inimaginable con una base sólida, la amistad.
-        </p>
-        <p>
-            Hoy me siento feliz porque celebraré la amistad, y con quién mejor que contigo, una de mis "bestofrendas"
-            (sí, me refiero a ti, bobita). Eres esa persona que, hace un tiempo no muy lejano, me dijo las palabras que
-            cambiaron mi vida para mejor. Eres alguien a quien admiro profundamente y de quien me siento honrado de ser
-            amigo.
-        </p>
-        <p>
-            Eres de quién siempre me alegré de haber conocido. Como estudiante eres increíble, pero como amiga eres de
-            las mejores. Eres honesta, gentil y, aunque tus chistes a veces fallen, eres graciosa. Hablar contigo
-            durante horas se siente como si fueran minutos. Eres una de las personas a las que más quiero, y estoy
-            seguro de que esta frase de un anime te queda perfecta:
-        </p>
-        <blockquote>
-            *Instead of a shadow, bright and sunny days are what follow behind you*
-        </blockquote>
-        <p>
-            Eso es lo que representas: esa entidad que puede iluminar el día de cualquiera. Al menos, eso es lo
-            que siento yo. Te agradezco por tu amistad y el amor que eso le da a mi vida.
-        </p>
-        <p>
-            TQMMQUM (te quiero mucho más que un mundo).<br>
-            Feliz Día del Amor y La Amistad, Rosii.
-        </p>
+  <!-- This notice is to get the access password. -->
+  <section class="notice" id="secureNotice">
+    <form id="loginForm">
+      <label for="password">
+        Esto es un presente para alguien especial. Por favor, ingresa tu cedula (sin puntos) para verificar tu identidad.
+      </label>
+      <div class="inputWrapper">
+          <input type="tel" id="password" inputmode="numeric" pattern="[0-9]*" required>
+          <button type="submit" id="passwordBtn">Ingresar</button>
+      </div>
+    </form>
+  </section>
 
-        <!-- Imagen al final de la página -->
-        <div class="imagen-con-marco">
-            <img src="sources/imagen.jpg" alt="Imagen especial">
-        </div>
-    </div>
+  <!-- This notice is to select a year and get full access. -->.
+  <section class="notice" id="selectionNotice" style="display: none;">
+    <form id="selectionForm">
+      <label for="year">
+        Por favor, selecciona un año para revelar su contenido especial. 
+      </label>
+      <div class="inputWrapper">
+        <select id="year">
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+        </select>
+        <button type="submit" id="selectBtn">Revelar</button>
+      </div>
+    </form>
+  </section>
 
-    <audio id="test-audio" autoplay loop>
-        <source src="sources/01-song.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-    <button id="mute-button" class="mute-button">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </button>
-
-    <script src="scripts.js"></script>
-    <!-- Snow Particles Background -->
-    <div id="particles-js"></div>
-    <script src="sources/particles.min.js"></script>
-    <script src="sources/app.js"></script>
+  <script type="module" src="./src/scripts.js"></script>
+  <!-- Snow Particles Background -->
+  <div id="particles-js"></div>
+  <script src="./src/particles.min.js"></script>
+  <script src="./src/app.js"></script>
 
 </body>
 

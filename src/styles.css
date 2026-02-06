@@ -1,15 +1,63 @@
+/* Main body */
 body {
     background-color: #282a37;
     /* Color de fondo del tema Abyss */
     color: #e7e7e7;
     /* Color del texto del tema Abyss */
-    font-family: 'Bradley Hand', cursive;
+    font-family: 'Brush Script MT', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
     overflow: auto;
+}
+
+/* Style for the notices*/
+.notice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  color: #e7e7e7;
+  width: 90%;
+  max-width: 450px;
+  font-size: 130%;
+}
+
+ /* Styles for login form */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.inputWrapper input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.inputWrapper button {
+  margin-top: 0;
+  padding: 10px 20px;
+  background-color: #e7e7e7;
+  color: #0c0c0c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 /* Contenedor de la imagen */
@@ -31,29 +79,6 @@ body {
     border: 0px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.aviso {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: #e7e7e7;
-}
-
-.aviso button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #e7e7e7;
-    color: #0c0c0c;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Bradley Hand', cursive;
 }
 
 .carta {
