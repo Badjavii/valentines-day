@@ -1,16 +1,14 @@
 /* Main body */
 body {
-    background-color: #282a37;
-    /* Color de fondo del tema Abyss */
-    color: #e7e7e7;
-    /* Color del texto del tema Abyss */
-    font-family: 'Brush Script MT', cursive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
+  background-color: #282a37;
+  color: #e7e7e7;
+  font-family: 'Brush Script MT', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }
 
 /* Style for the notices*/
@@ -41,6 +39,9 @@ body {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .inputWrapper input {
@@ -60,40 +61,90 @@ body {
   white-space: nowrap;
 }
 
-/* Contenedor de la imagen */
-.imagen-con-marco {
-    margin-top: auto;
-    /* Empuja la imagen hacia abajo */
-    text-align: center;
-    padding: 20px;
-    border: 10px;
-    border-radius: 20px;
-    background-color: #10192c;
-    border-top: 2px;
-}
-
-/* Estilo de la imagen */
-.imagen-con-marco img {
-    max-width: 100%;
-    height: auto;
-    border: 0px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+/* ==========================================================================
+   ESTILOS DE LA CARTA (GENERADA POR MARKDOWN)
+   ========================================================================== */
 
 .letter {
     max-width: 800px;
-    text-align: left;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #43475d;
-    /* Fondo de la carta */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Sombra para darle profundidad */
-    display: none;
+    width: 90%; 
+    margin: 40px auto; 
+    padding: 40px;
+    background-color: #43475d; 
+    color: #e7e7e7;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: min-content;
+    min-height: min-content;
+    overflow: hidden; 
+}
+
+.letter h1, .letter h2, .letter h3 {
+    font-family: 'Brush Script MT', cursive;
+    color: #ffb7c5; /* Rosa suave para resaltar títulos */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Párrafos */
+.letter p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.letter img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;    
+    margin: 20px 0 0 0;
+    padding: 10px;         
+    background-color: #10192c; 
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box; 
+}
+
+.letter blockquote {
+    margin: 30px 0;
+    padding: 20px 25px;
+    background-color: rgba(16, 25, 44, 0.4);
+    border-left: 5px solid #ffb7c5;
+    border-radius: 0 10px 10px 0;
+}
+
+.letter blockquote p {
+  font-style: italic;
+  margin-bottom: 0;
+  color: #d1d1d1;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* Notas finales o pies de página (h4) */
+.letter h4 {
+    font-family: sans-serif; /* Para que la nota del futuro se vea diferente */
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    border-top: 1px dashed rgba(231, 231, 231, 0.2);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Separadores (---) */
+.letter hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ffb7c5, transparent);
+    margin: 30px 0;
 }
 
 .mute-button {

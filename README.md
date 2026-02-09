@@ -10,9 +10,9 @@ This project is a personalized website designed to showcase a collection of memo
 
 ## Technologies
 The project is built with pure web technologies (no frameworks):
-- HTML5
-- CSS3 (Custom animations)
-- JavaScript (ES6+ Modules)
+- HTML5.
+- CSS3 (Custom animations).
+- JavaScript (ES6+ Modules).
 - [Marked.js](https://marked.js.org/) for Markdown parsing.
 
 ## Credits
