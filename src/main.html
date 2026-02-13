@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feliz Día del Amor y La Amistad</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
   <link rel="stylesheet" href="./styles.css">
   <link rel="icon" href="./assets/images/icon.svg">
 </head>
@@ -15,8 +16,8 @@
   <!-- This notice is to say that the message is loading. -->
   <section class="notice" id="loadingNotice">
     <label>Cargando mensaje... Espera un poco por favor.</label>
-    <div class="capybara-container">
-      <img src="./assets/videos/capybara-running.gif" class="capy-gif">
+    <div class="capybaraContainer">
+      <img src="./assets/videos/capybara-walking.gif" class="capyGif">
     </div>
   </section>
 
@@ -30,18 +31,52 @@
 
   <!-- This section is for the main content of the letter. -->
   <main id="letter" class="letter" style="display: none;">
-
   </main>
 
-  <audio id="test-audio" autoplay loop>
-    <source src="./assets/audios/01-song.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <button id="mute-button" class="mute-button">
+  <audio id="mainAudio"></audio>
+
+  <!-- This section is for the menu button  -->
+  <button id="menuBtn" class="menuFab">
     <div class="wave"></div>
     <div class="wave"></div>
     <div class="wave"></div>
   </button>
+
+  <section class="notice menuNotice" id="menu" style="display: none;">
+    <div class="menuWrapper">
+      <h3 class="menuHeader">Menú Básico</h3>
+
+      <!-- TODO: Finish this music player
+      <div class="playerSection">
+        <h1 id="trackTitle">Title</h1>
+        <p id="trackArtist">Name</p>
+
+        <input type="range" value="0" id="playerProgress" class="progressBar">
+
+        <div class="playerControls">
+          <button id="prevBtn" class="controlBtn">⏮</button>
+          <button id=playPauseBtn" class="controlBtn">▶</button>
+          <button id="nextBtn" class="controlBtn">⏭</button>
+        </div>
+      </div>
+
+      <hr class="menuDivider">
+      -->
+
+      <nav class="menuNav">
+        <button id="changeYearBtn" class="navBtn" onclick="window.location.href='../index.html'">
+          Elegir otro año
+        </button>
+      </nav>
+
+      <footer class="menuFooter">
+        <p class="credits">Proudly designed and developed by <strong>Badjavii</strong></p>
+        <a href="https://github.com/Badjavii/valentines-day" target="_blank" rel="noopener">
+          <img src="./assets/images/github-logo.svg" alt="GitHub" class="ghIcon">
+        </a>
+      </footer>
+    </div>
+  </section>
   
   <script type="module" src="./scripts/main.js"></script>
   <!-- Snow Particles Background -->
