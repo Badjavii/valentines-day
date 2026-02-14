@@ -1,12 +1,18 @@
 import { decrypt } from './cipher.js';
 import { SessionManager } from './session.js';
+import { MusicPlayer } from './player.js';
 
 SessionManager.loadFromStorage();
 
-/*
-const playlist = ['01-song.mp3'];
-let currentTrackIndex = 0;
-*/
+const playlist = [
+  { title: "Can't Help Falling in Love", author: 'Boyce Avenue', path: '00-song.mp3'},
+  { title: 'Cristina', author: 'Sebastian Yatra', path: '01-song.mp3'},
+  { title: 'Muchachita Linda', author: 'Juan Luis Guerra 4.40', path: '02-song.mp3'},
+  { title: 'En Medio de Ésta Fé', author: 'Ricardo Andrade', path: '03-song.mp3'},
+  { title: 'La Cosa Mas Bella', author: 'Eros Ramazzotti', path: '04-song.mp3'},
+  { title: 'Tú con Él', author: 'Rauw Alejandro', path: '05-song.mp3'},
+  { title: 'BAILE INoLVIDABLE', author: 'Bad Bunny', path: '06-song.mp3'},
+];
 
 // This function is to get the decrypted text
 async function getDecryptedLetter(shift) {
@@ -21,52 +27,15 @@ async function getDecryptedLetter(shift) {
   return decryptedLetter;
 }
 
-/*
-function loadTrack(index) {
-  const audio = document.getElementById('mainAudio');
-  const trackTitle = document.getElementById('trackTitle');
-  const trackArtist = document.getElementById('trackArtist');
-  const fileName = playlist[index];
-  const path = `./assets/audios/${fileName}`;
-
-  audio.src = path;
-
-  if (window.jsmediatags) {
-    window.jsmediatags.read(path, {
-      onSuccess: function(tag) {
-        trackTitle.innerText = tag.tags.title || fileName;
-        trackArtist.innerText = tag.tags.artist || "Unknown Artist";
-      },
-      onError: function() {
-        trackTitle.innerText = fileName;
-        trackArtist.innerText = "Abyss Audio";
-      }
-    });
-  }
-}
-*/
-
  // ==Main==
 document.addEventListener("DOMContentLoaded", async () => {
-  /*
-  try {
-    loadTrack(currentTrackIndex);
-  } catch (error) {
-    console.error("Error al cargar audio inicial:", error);
-  }
-  */
-
+  const player = new MusicPlayer(playlist);
   const menuBtn = document.getElementById('menuBtn');
   const menuNotice = document.getElementById('menu'); 
   const loadingNotice = document.getElementById('loadingNotice');
   const letterContainer = document.getElementById('letter');
   const denegationNotice = document.getElementById('denegationNotice');
   const denegationBtn = document.getElementById('denegationBtn');
-  /*
-  const playPauseBtn = document.getElementById('playPauseBtn');
-  const audio = document.getElementById('mainAudio');
-  const progress = document.getElementById('playerProgress');
-  */
 
   const shift = SessionManager.getShift();
 
@@ -96,8 +65,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadingNotice.innerHTML = "<label>Hubo un error cargando el mensaje. Intentalo de nuevo.</label>";
   }
 
-  // loadTrack(currentTrackIndex);
-
   menuBtn.addEventListener('click', () => {
     const isHidden = (window.getComputedStyle(menuNotice).display === 'none');
 
@@ -109,40 +76,5 @@ document.addEventListener("DOMContentLoaded", async () => {
       letterContainer.classList.remove('blurBg');
     }
   });
-
-  /*
-  playPauseBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      playPauseBtn.innerText = "⏸";
-    } else {
-      audio.pause();
-      playPauseBtn.innerText = "▶";
-    }
-  });
-
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-    loadTrack(currentTrackIndex);
-    audio.play();
-    playPauseBtn.innerText = "⏸";
-  });
-
-  document.getElementById('prevBtn').addEventListener('click', () => {
-    currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;\
-    loadTrack(currentTrackIndex);
-    audio.play();
-    playPauseBtn.innerText = "⏸";
-  });
-
-  audio.addEventListener('timeupdate', () => {
-    const value = (audio.currentTime / audio.duration) * 100;
-    progress.value = value || 0;
-  });
-
-  progress.addEventListener('input', () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-  });
-  */
 
 });

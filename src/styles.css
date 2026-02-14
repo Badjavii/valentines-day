@@ -255,7 +255,6 @@ body {
   transition: filter 0.3s ease;
 }
 
-/* TODO: Finish this music player
 .playerControls {
   display: flex;
   justify-content: center;
@@ -275,7 +274,6 @@ body {
   width: 100%;
   accent-color: #ffb7c5;
 }
-*/
 
 .navBtn {
   width: 100%;
